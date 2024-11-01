@@ -1,0 +1,863 @@
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    margin: 0;
+}
+
+.navbar {
+    width: 220px;
+    height: 100vh;
+    background-color: #223462;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+}
+
+.profile {
+    text-align: center;
+}
+
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.profile-info {
+    margin-top: 10px;
+}
+
+.name {
+    font-weight: bolder;
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: white;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid gold;
+    margin: 10px 0;
+}
+
+.role {
+    font-size: 14px;
+    color: white;
+}
+
+.menu {
+    flex-grow: 1; /* Allows the menu to take up available space */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.menu-item {
+    align-items: center;
+    padding: 10px 45px;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s, font-weight 0.3s;
+    flex-direction: column; /* Allows submenu to appear below the text */
+}
+
+.menu-item.active:hover {
+    background-color: transparent;
+}
+
+.menu-icon {
+    width: auto;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.menu-text {
+    vertical-align: top;
+    color: white;
+}
+
+.menu-text.active {
+    font-weight: bolder;
+}
+
+.menu-text:hover {
+    font-weight: bold;
+}
+
+/* Submenu styles */
+.submenu {
+    display: none; /* Hide submenu by default */
+    background-color: #8f8f8fb0; /* Background color of submenu */
+    padding: 10px;
+    margin-top: 5px; /* Space between menu item and submenu */
+    width: 150px; /* Adjust width as needed */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.submenu a {
+    display: block; /* Make each link block-level */
+    padding: 5px;
+    color: #fff; /* Text color */
+    text-decoration: none;
+    font-size: 14px; /* Smaller font for submenu items */
+    transition: font-weight 0.3s; /* Smooth transition for font weight */
+}
+
+.submenu a.active {
+    font-weight: bolder;
+}
+
+.submenu a:hover {
+    font-weight: bold; /* Bold text on hover */
+}
+
+.menu-item:hover .submenu {
+    display: block; /* Show submenu on hover */
+}
+
+.submenu hr {
+    margin: 5px 0;
+    border: 0;
+    border-top: 1px solid #fff; /* White separator */
+}
+
+.logout {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    padding: 30px;
+    padding-left: 50px;
+}
+
+.exit-icon {
+    width: 32px; /* Slightly larger size */
+    height: 32px;
+    cursor: pointer;
+}
+
+.main-content {
+    margin-left: 220px; /* Same as the width of the navbar */
+    padding: 30px;
+    flex: 1;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between; /* Space between text and logo */
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #223462;
+}
+
+.header-logo {
+    width: 30px;
+    height: auto;
+}
+
+.separator {
+    border-top: 2px solid #223462;
+    margin-bottom: 20px;
+}
+
+.box-container {
+    display: flex;
+    gap: 20px; /* Space between the boxes */
+    margin-bottom: 10px;
+}
+
+.box {
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #ddd;
+    min-width: 100px;
+    max-width: calc(22.00% - 20px);
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for better visibility */
+    color: #ffffff;
+}
+
+.box-librarian {
+    background-color: #D96EAE; 
+}
+
+.box-patron {
+    background-color: #D9A322; 
+}
+
+.box-material {
+    background-color: #7049A3;
+}
+
+.box-request {
+    background-color: #D96EAE;
+}
+
+.box-materials {
+    background-color: #7049A3;
+    ;
+}
+
+.box-materialtype {
+    background-color: #E76D3B;
+}
+
+.box-issuedmaterials {
+    background-color: #2DBDA8;
+}
+
+.box-returnedmaterials {
+    background-color: #84B547;
+}
+
+.box-overduematerials {
+    background-color: #CC3E4A;
+}
+
+.box-damagedmaterials {
+    background-color: #B8B8B8;
+}
+
+
+.label {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.number {
+    font-size: 50px;
+    font-weight: bolder;
+    color: #ffffff;
+    padding-right: 20px;
+}
+
+/*Search preferences and table of Manage Accounts*/
+.search-container {
+    padding: 10px;
+    background-color: #e7e7e7;
+    margin-bottom: 20px;
+}
+
+.search-container label {
+    margin-right: 10px;
+}
+
+.search-container input, .search-container select {
+    margin-right: 10px;
+    width: 180px; 
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search-btn {
+    width: 100px;
+    height: 30px; 
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    background-color: #223462;
+    font-weight: bold;
+}
+
+.reset-btn {
+    width: 100px;
+    height: 30px; 
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    background-color: #ccc;
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #707070;
+    color: #fff;
+}
+
+td {
+    background-color: #F0F0F0;
+}
+
+.action-button {
+    background-color: #223462;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.action-button:hover {
+    background-color: #1a2a4a;
+}
+
+/* Modal styles */
+.updateSuccess-modal, .addSuccess-modal, .deleteSuccess-modal {
+    display: none;
+    position: fixed;
+    top: 90px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: start;
+    z-index: 1000; /* Ensure the modal is above other content */
+}
+
+.updateSuccess-modal-content {
+    background: #223462;
+    padding: 15px 10px 15px;
+    border-radius: 50px;
+    width: 400px;
+    height: 75px;
+    text-align: center;
+    position: relative;
+    color: #fff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.addSuccess-modal-content {
+    background: #2CBF6D;
+    padding: 15px 10px 15px;
+    border-radius: 50px;
+    width: 400px;
+    height: 75px;
+    text-align: center;
+    position: relative;
+    color: #fff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.deleteSuccess-modal-content {
+    background: #db1b1b;
+    padding: 15px 10px 15px;
+    border-radius: 50px;
+    width: 400px;
+    height: 75px;
+    text-align: center;
+    position: relative;
+    color: #fff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure the modal is above other content */
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#confirmLogout{
+    background-color: #223462;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+#cancelLogout, #cancelDelete {
+    background-color: #D3D3D3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+#confirmDelete{
+    background-color: #db1b1b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.modal-button:hover {
+    text-decoration: underline;
+}
+
+/* Action Icons */
+.action-icon {
+    width: auto; 
+    height: 20px; /* Adjust size as needed */
+    cursor: pointer;
+    margin-right: 5px; /* Spacing between icons */
+}
+
+/*Add User form*/
+.form-container #add-user-form {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#add-user-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1200px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-columns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-column {
+    flex: 1;
+    margin: 0 20px;
+}
+
+.left-column, .middle-column, .right-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.photo-box {
+    width: 170px;
+    height: 170px;
+    border: 2px solid #ddd;
+    padding: 10px;
+    background-color: #e7e7e7;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 10px; /* Center horizontally */
+}
+
+.photo-box img {
+    max-width: 170px;
+    max-height: 170px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+#photo-upload-container {
+    text-decoration: underline;
+    text-align: center; /* Center the container */
+    margin-bottom: 20px;
+}
+
+#photo-upload {
+    margin: 0 auto; /* Center the upload input */
+}
+
+.input-group {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    margin-bottom: 0px;
+}
+
+.input-group input, .input-group select {
+    width: 100%;
+    height: 28px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/*To distuingish read-only fields*/
+#userID, #pass {
+    background-color: #E6E6E6;
+}
+
+/*For customized spacing of certain fields in Add account*/
+#userID, #user-role, #user-status, #user-type {
+    margin-bottom: 8px;
+    height: 40px;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.form-buttons #addAccount, #savePassword {
+    background-color: #2CBF6D;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    font-size: 13px;
+}
+
+.form-buttons #cancelAdd, #cancelChangePass {
+    background-color: #db1b1b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    font-size: 13px;
+}
+
+.form-buttons button:hover {
+    text-decoration: underline;
+}
+
+.form-buttons button[type="button"]:hover {
+    text-decoration: underline;
+}
+
+#changePasswordButton{
+    background-color: #fff;
+    border: none;
+    text-decoration: underline;
+    text-align: right;
+    font-size: x-small;
+}
+
+/*Change Password Modal*/
+#changePass {
+    background: #fff;
+    padding: 20px;
+    border-radius: 0px;
+    width: 300px;
+    text-align: left;
+    position: relative;
+}
+
+.changePass-buttons {
+    display: flex;
+    justify-content: right;
+}
+
+.changePass-buttons button:hover {
+    text-decoration: underline;
+}
+.header1{
+    display: flex;
+    justify-content: space-between; /* Space between text and logo */
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 0px;
+    color: #223462;
+}
+.header-icons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -40px;
+    margin-bottom: 20px;
+    margin-right: 100px;
+    gap: 10px;
+}
+
+.btn-print, .btn-download {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.btn-print {
+    background-color: #2196f3;
+    color: white;
+}
+
+.btn-download {
+    background-color: #4caf50;
+    color: white;
+}
+
+.btn-print:hover {
+    background-color: #1976d2;
+}
+
+.btn-download:hover {
+    background-color: #388e3c;
+}
+/* Filter Section Styling */
+
+.account-generate {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px; /* Reduced space between account and generate button */
+    align-items: center;
+}
+
+.btn-generate {
+    background-color: #fcb042;
+    color: white;
+    border: none;
+    padding: 8px 15px; /* Reduced padding for the button */
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-generate:hover {
+    background-color: #fca032;
+}
+/* Filter Section Styling */
+.filters-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.filters-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) 1.5fr 1.5fr; /* Adjusted grid for dates and user id */
+    gap: 10px;
+    background-color: #f1f3f5;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1200px;
+}
+
+.filter-column {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.filter-dates {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.date-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.filter-column label {
+    display: flex;
+    align-items: center;
+}
+
+.filter-column input[type="date"], .filter-column input[type="text"] {
+    padding: 4px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+.account-generate {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+    align-items: center;
+}
+
+.btn-generate {
+    background-color: #fcb042;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-generate:hover {
+    background-color: #fca032;
+}
+
+/* Adjusting other content for consistency */
+.main-content {
+    padding: 15px;
+}
+
+.header-icons {
+    margin-bottom: 15px;
+    display: flex;
+    gap: 10px;
+}
+.report-section {
+    margin-top: 20px;
+    text-align: center;
+}
+/*report css*/
+.report-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.report-logo {
+    width: 80px;
+    margin-right: 20px;
+}
+
+.institution-info h3 {
+    font-size: 1.5rem; /* Larger font size for better visibility */
+    font-weight: bold;
+    margin: 0;
+    
+}
+
+.institution-info p {
+    margin: 0px 0;
+    font-size: 1rem; /* Increased font size */
+    color: #333;
+}
+
+.report-title {
+    font-size:30px; /* Increased title font size */
+    font-weight: bold;
+    margin: 5px;
+    color: #000; /* Ensure the title is black for better visibility */
+}
+
+.report-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1px;
+    font-size: 1rem; /* Increased table font size */
+}
+
+.report-table th, .report-table td {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+}
+
+.report-table th {
+    background-color: #f7f7f7;
+    font-weight: bold;
+    color: #000; /* Make header text black */
+}
+
+.report-table td {
+    text-align: center;
+   
+}
+.date-group-cat {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-left: 20px;
+}
+.update-button {
+    background-color: #28a745; /* Green color like the Reserve button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    float: right; /* Moves the button to the right */
+    margin-top: 30px; /* Add some space above the button if needed */
+    margin-right: 250px;
+}
+
+    .update-button:hover {
+        background-color: #218838; /* Darker green on hover */
+    }
+
+    .update-button:focus {
+        outline: none;
+    }
+.photo-box {
+    text-align: center; /* Center the photo and button */
+    margin-bottom: 20px; /* Space between the photo and the rest of the form */
+}
+
+.profile-img {
+    max-width: 200px; /* Set maximum width for image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Add rounded corners to the image */
+}
+
+.change-photo {
+    margin-top: 10px; /* Space between the image and the upload button */
+}
+
+.upload-photo-label {
+    display: inline-block;
+    background-color: #28a745; /* Green button color */
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .upload-photo-label:hover {
+        background-color: #218838; /* Darker green on hover */
+    }
+
+.upload-photo-input {
+    display: none; /* Hide the actual file input */
+}
+

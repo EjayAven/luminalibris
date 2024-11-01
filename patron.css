@@ -1,0 +1,38 @@
+
+.box-librarian {
+    background-color: #D96EAE; 
+}
+
+.box-patron {
+    background-color: #D9A322; 
+}
+
+.box-material {
+    background-color: #7049A3;
+}
+.box-borrowed {
+    background-color: #7049A3;
+}
+.box-returned {
+    background-color: #84B547;
+}
+.box-overdue {
+    background-color: #CC3E4A;
+}
+.box-reserved {
+    background-color: #2DBDA8;
+}
+.box-fines {
+    background-color: #B8B8B8;
+}
+.label {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.number {
+    font-size: 80px;
+    font-weight: bolder;
+    color: #ffffff;
+    padding-right: 20px;
+}

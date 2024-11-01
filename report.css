@@ -1,0 +1,75 @@
+@media print {
+    /* Hides the navbar, filters, and header icons during printing */
+    .navbar,
+    .filters-section,
+    .header-icons,
+    .logout,
+    .header1 {
+        display: none !important;
+    }
+
+    /* Ensure the report section and table use full width */
+    .report-section {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Table layout improvements for printing */
+    .report-table {
+        width: 100%;
+        border-collapse: collapse;
+        page-break-inside: auto; /* Allow table to break between pages */
+    }
+
+    .report-table th, .report-table td {
+        border: 1px solid black; /* Add solid black borders for visibility */
+        padding: 5px;
+        text-align: left;
+    }
+
+    .report-table th {
+        background-color: #f2f2f2;
+    }
+
+    /* Ensure the table rows don't break awkwardly between pages */
+    .report-table tr {
+        page-break-inside: avoid; /* Prevent row from breaking between pages */
+        page-break-after: auto;
+    }
+
+    /* Increase font size and make it consistent for printing */
+    .report-title, .institution-info {
+        font-size: 18px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    /* Make sure the logo and report header appear clearly */
+    .report-header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    /* General print styling to remove extra margin/padding */
+    body {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+/* General styles for the report table */
+.report-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.report-table th, .report-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.report-table th {
+    background-color: #f4f4f4;
+}

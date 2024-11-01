@@ -1,0 +1,391 @@
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    margin: 0;
+}
+
+.navbar {
+    width: 220px;
+    height: 100vh;
+    background-color: #223462;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+}
+
+.profile {
+    text-align: center;
+}
+
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.profile-info {
+    margin-top: 10px;
+}
+
+.name {
+    font-weight: bolder;
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: white;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid gold;
+    margin: 10px 0;
+}
+
+.role {
+    font-size: 14px;
+    color: white;
+}
+
+.menu {
+    flex-grow: 1; /* Allows the menu to take up available space */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.menu-item {
+    align-items: center;
+    padding: 10px 45px;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s, font-weight 0.3s;
+    flex-direction: column; /* Allows submenu to appear below the text */
+}
+
+.menu-item.active:hover {
+    background-color: transparent;
+}
+
+.menu-icon {
+    width: auto;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.menu-text {
+    vertical-align: top;
+    color: white;
+}
+
+.menu-text.active {
+    font-weight: bolder;
+}
+
+.menu-text:hover {
+    font-weight: bold;
+}
+
+/* Submenu styles */
+.submenu {
+    display: none; /* Hide submenu by default */
+    background-color: #8f8f8fb0; /* Background color of submenu */
+    padding: 10px;
+    margin-top: 5px; /* Space between menu item and submenu */
+    width: 150px; /* Adjust width as needed */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.submenu a {
+    display: block; /* Make each link block-level */
+    padding: 5px;
+    color: #fff; /* Text color */
+    text-decoration: none;
+    font-size: 14px; /* Smaller font for submenu items */
+    transition: font-weight 0.3s; /* Smooth transition for font weight */
+}
+
+.submenu a.active {
+    font-weight: bolder;
+}
+
+.submenu a:hover {
+    font-weight: bold; /* Bold text on hover */
+}
+
+.menu-item:hover .submenu {
+    display: block; /* Show submenu on hover */
+}
+
+.submenu hr {
+    margin: 5px 0;
+    border: 0;
+    border-top: 1px solid #fff; /* White separator */
+}
+
+.logout {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    padding: 30px;
+    padding-left: 50px;
+}
+
+.exit-icon {
+    width: 32px; /* Slightly larger size */
+    height: 32px;
+    cursor: pointer;
+}
+
+.main-content {
+    margin-left: 220px; /* Same as the width of the navbar */
+    padding: 30px;
+    flex: 1;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between; /* Space between text and logo */
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #223462;
+}
+
+.header-logo {
+    width: 30px;
+    height: auto;
+}
+
+.separator {
+    border-top: 2px solid #223462;
+    margin-bottom: 20px;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure the modal is above other content */
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#confirmLogout{
+    background-color: #223462;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+#cancelLogout {
+    background-color: #D3D3D3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.modal-button:hover {
+    text-decoration: underline;
+}
+
+/* Action Icons */
+.action-icon {
+    width: auto; 
+    height: 20px; /* Adjust size as needed */
+    cursor: pointer;
+    margin-right: 5px; /* Spacing between icons */
+}
+
+/*Add User form*/
+.form-container #add-user-form {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#add-user-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1200px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-columns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-column {
+    flex: 1;
+    margin: 0 20px;
+}
+
+.left-column, .middle-column, .right-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.photo-box {
+    width: 170px;
+    height: 170px;
+    border: 2px solid #ddd;
+    padding: 10px;
+    background-color: #e7e7e7;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 10px; /* Center horizontally */
+}
+
+.photo-box img {
+    max-width: 170px;
+    max-height: 170px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+#photo-upload-container {
+    text-align: center; /* Center the container */
+    margin-bottom: 20px;
+}
+
+#photo-upload {
+    margin: 0 auto; /* Center the upload input */
+}
+
+.input-group {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    margin-bottom: 0px;
+}
+
+.input-group input, .input-group select {
+    width: 100%;
+    height: 28px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/*To distuingish read-only fields*/
+#user-id, #password {
+    background-color: #E6E6E6;
+}
+
+/*For customized spacing of certain fields in Add account*/
+#user-id, #role, #status, #type {
+    margin-bottom: 8px;
+    height: 40px;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.form-buttons #addAccount, #savePassword {
+    background-color: #2CBF6D;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    font-size: 13px;
+}
+
+.form-buttons #cancelAdd, #cancelChangePass {
+    background-color: #db1b1b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    font-size: 13px;
+}
+
+.form-buttons button:hover {
+    text-decoration: underline;
+}
+
+.form-buttons button[type="button"]:hover {
+    text-decoration: underline;
+}
+
+#changePasswordButton{
+    background-color: #fff;
+    border: none;
+    text-decoration: underline;
+    text-align: right;
+    font-size: x-small;
+}
+
+/*Change Password Modal*/
+#changePass {
+    background: #fff;
+    padding: 20px;
+    border-radius: 0px;
+    width: 300px;
+    text-align: left;
+    position: relative;
+}
+
+.changePass-buttons {
+    display: flex;
+    justify-content: right;
+}
+
+.changePass-buttons button:hover {
+    text-decoration: underline;
+}
+

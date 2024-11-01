@@ -1,0 +1,441 @@
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    margin: 0;
+}
+
+.navbar {
+    width: 220px;
+    height: 100vh;
+    background-color: #223462;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+}
+
+.profile {
+    text-align: center;
+}
+
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.profile-info {
+    margin-top: 10px;
+}
+
+.name {
+    font-weight: bolder;
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: white;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid gold;
+    margin: 10px 0;
+}
+
+.role {
+    font-size: 14px;
+    color: white;
+}
+
+.menu {
+    flex-grow: 1; /* Allows the menu to take up available space */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.menu-item {
+    align-items: center;
+    padding: 10px 45px;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s, font-weight 0.3s;
+    flex-direction: column; /* Allows submenu to appear below the text */
+}
+
+.menu-item.active:hover {
+    background-color: transparent;
+}
+
+.menu-icon {
+    width: auto;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.menu-text {
+    vertical-align: top;
+    color: white;
+}
+
+.menu-text.active {
+    font-weight: bolder;
+}
+
+.menu-text:hover {
+    font-weight: bold;
+}
+
+/* Submenu styles */
+.submenu {
+    display: none; /* Hide submenu by default */
+    background-color: #8f8f8fb0; /* Background color of submenu */
+    padding: 10px;
+    margin-top: 5px; /* Space between menu item and submenu */
+    width: 150px; /* Adjust width as needed */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.submenu a {
+    display: block; /* Make each link block-level */
+    padding: 5px;
+    color: #fff; /* Text color */
+    text-decoration: none;
+    font-size: 14px; /* Smaller font for submenu items */
+    transition: font-weight 0.3s; /* Smooth transition for font weight */
+}
+
+.submenu a.active {
+    font-weight: bolder;
+}
+
+.submenu a:hover {
+    font-weight: bold; /* Bold text on hover */
+}
+
+.menu-item:hover .submenu {
+    display: block; /* Show submenu on hover */
+}
+
+.submenu hr {
+    margin: 5px 0;
+    border: 0;
+    border-top: 1px solid #fff; /* White separator */
+}
+
+.logout {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    padding: 30px;
+    padding-left: 50px;
+}
+
+.exit-icon {
+    width: 32px; /* Slightly larger size */
+    height: 32px;
+    cursor: pointer;
+}
+
+.main-content {
+    margin-left: 220px; /* Same as the width of the navbar */
+    padding: 30px;
+    flex: 1;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between; /* Space between text and logo */
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #223462;
+}
+
+.header-logo {
+    width: 30px;
+    height: auto;
+}
+
+.separator {
+    border-top: 2px solid #223462;
+    margin-bottom: 20px;
+}
+
+
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure the modal is above other content */
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#confirmLogout{
+    background-color: #223462;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+#cancelLogout, #cancelDelete {
+    background-color: #D3D3D3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+#confirmDelete{
+    background-color: #db1b1b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.modal-button:hover {
+    text-decoration: underline;
+}
+
+/* Action Icons */
+.action-icon {
+    width: auto; 
+    height: 20px; /* Adjust size as needed */
+    cursor: pointer;
+    margin-right: 5px; /* Spacing between icons */
+}
+
+
+.form-columns {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.form-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.left-column, .middle-column {
+    flex: 2; /* Left and middle columns take up twice the space */
+}
+
+.right-column {
+    flex: 1; /* Keeps the right column smaller */
+    display: flex; /* Enables flexbox */
+    flex-direction: column; /* Ensures content stays in a column */
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
+}
+
+.photo-box {
+    width: 170px;
+    height: 200px;
+    border: 2px solid #ddd;
+    padding: 10px;
+    background-color: #e7e7e7;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 10px; /* Center horizontally */
+}
+
+.photo-box img {
+    max-width: 170px;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+
+.input-group {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center; /* Vertically center the label and input */
+    flex-direction: row;
+}
+
+.input-group label {
+    margin-right: 10px; /* Adds some space between the label and the input */
+    width: 150px;
+}
+
+.input-group input, #status, #condition {
+    flex: 1; /* Allows the input field to take up the remaining space */
+    height: 30px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.input-group #types {
+    width: auto; /* Ensures the dropdown only takes as much space as needed */
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    height: 30px; 
+    min-width: 180px; 
+}
+
+.input-group textarea {
+    flex: 1; 
+    height: 240px;
+    padding: 5px; 
+    border: 1px solid #ccc;
+    border-radius: 4px; 
+    box-sizing: border-box; 
+    resize: vertical; /* Allows vertical resizing of the textarea */
+}
+
+.form-separator {
+    border-top: 1px solid #223462;
+    margin: 20px 0;
+    width: 345px;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.form-buttons #addMaterial {
+    background-color: #2CBF6D;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    font-size: 13px;
+}
+
+.form-buttons #cancelAdd {
+    background-color: #db1b1b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    font-size: 13px;
+}
+
+.form-buttons button:hover {
+    text-decoration: underline;
+}
+
+.form-buttons button[type="button"]:hover {
+    text-decoration: underline;
+}
+
+
+/* Modal (popup) styles */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 400px; /* Fixed width */
+    text-align: center;
+    border-radius: 10px;
+    position: relative; /* Ensure close button is positioned relative to the modal */
+}
+
+.modal input[type="date"] {
+    padding: 10px;
+    width: calc(100% - 20px); /* Adjust width to fit within the modal */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* Reserve button style */
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.save-button, .cancel-button {
+    width: 40%; /* Adjust button width */
+    padding: 8px;
+    font-size: 14px; /* Make the buttons smaller */
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.save-button {
+    background-color: #28a745;
+    color: white;
+}
+
+.cancel-button {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Close button (X) styling */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: red;
+}
+
+.material-type-input {
+    max-width: 300px; /* Match this to the other input fields */
+    width: 100%; /* Ensures it uses up the available space */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}

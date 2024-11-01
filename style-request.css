@@ -1,0 +1,97 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins';
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #223462;
+    padding: 10px;
+    position: relative;
+    height: 80px; 
+}
+
+.back-button {
+    position: absolute;
+    left: 10px;
+}
+
+.back-icon {
+    width: 35px;
+    height:35px;
+}
+
+.logo img {
+    height: 60px; 
+}
+
+.content {
+    padding: 20px;
+    height: calc(100vh - 60px); 
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; 
+}
+
+.text {
+    max-width: 80%;
+}
+
+.text h3 {
+    margin: 20px 10px 10px;
+}
+
+.text ol {
+    list-style: decimal;
+    margin: 20px 40px;
+}
+
+.text p {
+    margin: 20px 20px;
+    font-style: italic;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.library-image img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%; /* Default width of 50% */
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) { /* For smaller screens like tablets */
+    .library-image img {
+        width: 70%; /* Increase width to 70% for smaller screens */
+        min-width: 200px; /* Set a minimum width */
+    }
+}
+
+@media (max-width: 480px) { /* For even smaller screens like phones */
+    .library-image img {
+        width: 90%; /* Increase width to 90% for very small screens */
+        min-width: 150px; /* Set a smaller minimum width */
+    }
+}
